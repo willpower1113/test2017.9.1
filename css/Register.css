@@ -1,0 +1,43 @@
+body {
+    background-color: white;
+}
+
+#logoImage {
+    margin: 50px;
+    text-align: left;
+}
+
+.main {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 450px;
+    height: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px grey;
+    padding-top: 15px;
+}
+
+button {
+    width: 200px;
+    height: 45px;
+    background-color: #060d3a;
+    color: white;
+    outline: 0;
+    -webkit-transition: all linear 0.30s;
+    -moz-transition: all linear 0.30s;
+    transition: all linear 0.30s;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+button:hover{
+    background-color: #060d3a;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+#canvasRegister{
+
+}

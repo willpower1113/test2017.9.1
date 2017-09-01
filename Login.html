@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:dragable="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link href="css/Login.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<img id="logoImage" src="drawable/logo.png" width="135px" height="78px">
+</body>
+
+<div class="main">
+    <canvas id="canvasLogin" width="130px" height="55px"></canvas>
+    <canvas id="canvasRegister" width="130px" height="55px" onmouseover="mouseOver()"
+            onmouseout="mouseOut()"
+            onclick="toRegister()"></canvas>
+    <div class="edit">
+        <div id="userPart">
+            <img src="drawable/username.png" dragable:false
+                 style="float:left;width: 25px;height: 25px;margin-left: 10px;margin-top: 18px">
+            <input style="text-align:center;width: 350px;height: 50px ;border: none;outline:none;background-color: transparent"
+                   value="请输入用户名">
+        </div>
+        <div style="float: left;width: 400px;height: 4px">
+            <canvas id="line" width="400px" height="4px"></canvas>
+        </div>
+
+        <div id="pwdPart">
+            <img src="drawable/password.png"
+                 style="float:left;width: 25px;height: 25px;margin-left: 10px;margin-top:18px">
+            <input style="text-align:center;width: 350px;height: 50px;margin-left: 5px ;border:none;outline:none;background-color: transparent"
+                   value="请输入密码">
+        </div>
+    </div>
+
+</div>
+
+<!--划线-->
+<script>
+    var vLine = document.getElementById("line");
+    var ctx = vLine.getContext("2d");
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.fillStyle = "#ddd";
+    ctx.strokeStyle = "#ddd";
+    ctx.beginPath();
+    ctx.moveTo(0, 2);
+    ctx.lineTo(400,2);
+    ctx.fill();
+</script>
+
+<!--登录按钮-->
+<script>
+    var cl = document.getElementById("canvasLogin");
+    var ctx_l = cl.getContext("2d");
+    ctx_l.font = "20px Fantasy";
+    ctx_l.fillStyle = "#f3735d";
+    ctx_l.strokeStyle = "#f3735d";
+    ctx_l.fillText('登录', 45, 40);
+    ctx_l.lineWidth = 4;
+    ctx_l.lineCap = "round";
+    ctx_l.beginPath();
+    ctx_l.moveTo(0, 52);
+    ctx_l.lineTo(150, 52);
+    ctx_l.stroke();
+</script>
+<!--注册按钮-->
+<script>
+    var cr = document.getElementById("canvasRegister");
+    var ctx_r = cr.getContext("2d");
+    mouseOut();
+    function mouseOver() {
+        ctx_r.clearRect(0, 0, 130, 55);
+        ctx_r.lineWidth = 4;
+        ctx_r.lineCap = "round";
+        ctx_r.font = "20px Fantasy";
+        ctx_r.fillStyle = "#f3735d";
+        ctx_r.strokeStyle = "#f3735d";
+        ctx_r.fillText('注册', 45, 40);
+        ctx_r.beginPath();
+        ctx_r.moveTo(0, 52);
+        ctx_r.lineTo(150, 52);
+        ctx_r.stroke();
+    }
+    function mouseOut() {
+        ctx_r.clearRect(0, 0, 130, 55);
+        ctx_r.lineWidth = 4;
+        ctx_r.lineCap = "round";
+        ctx_r.font = "20px Fantasy";
+        ctx_r.fillStyle = "#969696";
+        ctx_r.strokeStyle = "#FFFFFF";
+        ctx_r.fillText('注册', 45, 40);
+        ctx_r.beginPath();
+        ctx_r.moveTo(0, 52);
+        ctx_r.lineTo(150, 52);
+        ctx_r.stroke();
+    }
+    function toRegister() {
+        window.location.href = "http://localhost:63342/简书/Register.html";
+    }
+</script>
+
+</html>
